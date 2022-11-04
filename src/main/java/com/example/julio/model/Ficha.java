@@ -28,4 +28,7 @@ public class Ficha {
 
     @OneToMany(mappedBy = "ficha")
     private List<Conta> contas;
+
+    @Column
+    private float result;
 }
