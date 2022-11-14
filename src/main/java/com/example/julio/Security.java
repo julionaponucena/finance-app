@@ -15,7 +15,10 @@ public class Security {
             methods with security 
 
          */
-        http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()).and().authorizeRequests().anyRequest().authenticated().and().httpBasic();
+        http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+        /* .and().antMatcher("/**").authorizeRequests()
+        .antMatchers(new String[]{"/", "/not-restricted"}).permitAll()
+        .anyRequest().authenticated().and().oauth2Login()*/;
 
         return http.build();
     }

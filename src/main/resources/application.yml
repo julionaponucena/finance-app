@@ -1,4 +1,11 @@
 spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 766920981069-plqbn7tl8tcqi5i5tlepjrebfiv6i2eh.apps.googleusercontent.com
+            client-secret: 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
   h2:
     console.enabled: true
   datasource:

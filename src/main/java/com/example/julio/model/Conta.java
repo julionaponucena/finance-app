@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 @Data
@@ -26,6 +27,10 @@ public class Conta {
     private float valor;
 
     @ManyToOne
-    @JoinColumn(name = "fichaId")
     private Ficha ficha;
+
+    @JsonBackReference
+    public Ficha getFicha(){
+        return this.ficha;
+    }
 }
