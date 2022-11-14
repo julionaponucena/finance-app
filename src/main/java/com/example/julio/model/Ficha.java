@@ -3,6 +3,7 @@ package com.example.julio.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -42,6 +43,9 @@ public class Ficha {
     
     @Column
     private float result;
+
+    @ManyToOne
+    private Usuario usuario;
 
     @JsonManagedReference
     public List<Conta> getContas(){
